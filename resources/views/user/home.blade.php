@@ -117,7 +117,7 @@
                                     alt=""></div>
                             <h2 class="number">
                                 <span data-to="{{ $container->container_title }}" data-speed="1500"
-                                    data-refresh-interval="5">{{ $container->container_title }}</span>
+                                    data-refresh-interval="6">{{ $container->container_title }}</span>
                                 <p class="font-rubik">{{ $container->container_description }}</p>
                             </h2>
                         </div> <!-- /.counter-box-three -->
@@ -129,10 +129,9 @@
     </div>
 
     <!--
-                                                                                                                                                            =============================================
-                                                                                                                                                                Fitur
-                                                                                                                                                            ==============================================
-                                                                                                                                                            -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            =============================================
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Fitur
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================================                                                                                                                                                                                                                                                                                                                                                                                                                                                                         -->
     <div class="fancy-feature-four mt-20" id="fitur">
         <div class="bg-wrapper">
             <img src="../storage/public/assets/template_user/images/shape/18.svg" alt="" class="shapes shape-right">
@@ -155,82 +154,25 @@
                     <img src="../storage/public/assets/template_user/images/shape/21.svg" alt=""
                         class="shapes shape-two">
                     <div class="row justify-content-center d-lg-flex d-none">
-                        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="block-style-five">
-                                <div class="icon"><img src="../storage/public/assets/template_user/images/icon/20.svg"
-                                        class="m-auto" alt="">
-                                </div>
-                                <h6 class="title w-100 text-center"><span>Update Stok Barang Otomatis</span></h6>
-                                <p class="text-justify">Menambah stok barang ketika terjadi pembelian serta
-                                    mengurangi stok barang ketika
-                                    terjadi penjualan. Berisi juga peringatan stok kurang jika stok yang tersedia
-                                    tersisa sedikit.</p>
-                            </div> <!-- /.block-style-five -->
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200"
-                            data-aos-delay="100">
-                            <div class="block-style-five">
-                                <div class="icon"><img src="../storage/public/assets/template_user/images/icon/21.svg"
-                                        class="m-auto" alt="">
-                                </div>
-                                <h6 class="title w-100 text-center"><span>Penyesuaian Stok Barang</span></h6>
-                                <p class="text-justify">Anda dapat mencatat pengurangan atau penambahan jumlah
-                                    barang, begitupun
-                                    perubahan nilai barang persediaan anda.</p>
-                            </div> <!-- /.block-style-five -->
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200"
-                            data-aos-delay="200">
-                            <div class="block-style-five">
-                                <div class="icon"><img src="../storage/public/assets/template_user/images/icon/22.svg"
-                                        class="m-auto" alt="">
-                                </div>
-                                <h6 class="title w-100 text-center"><span>Retur Barang</span></h6>
-                                <p class="text-justify">Mengetahui barang apa saja yang dikembalilkan dari pihak
-                                    pembeli kepada anda yang
-                                    disebab karena barang yang diterima tidak sesuai dengan yang diinginkan.</p>
-                            </div> <!-- /.block-style-five -->
-                        </div>
+                        {{-- loop 3x 3 data teratas --}}
+                        @foreach ($dataFiturMenu as $item)
+                            <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200">
+                                <div class="block-style-five">
+                                    <div class="icon"><img
+                                            src="{{ asset('/storage/public/' . $item->fitur_menu_image) }}"
+                                            class="m-auto" alt="">
+                                    </div>
+                                    <h6 class="title w-100 text-center"><span
+                                            class="h6">{{ $item->fitur_menu_title }}</span>
+                                    </h6>
+                                    <p class="text-justify">
+                                        <span class="h6">{{ $item->fitur_menu_description }}</span>
+                                    </p>
+                                </div> <!-- /.block-style-five -->
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="row justify-content-center d-lg-flex d-none">
-                        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="block-style-five">
-                                <div class="icon"><img src="../storage/public/assets/template_user/images/icon/20.svg"
-                                        class="m-auto" alt="">
-                                </div>
-                                <h6 class="title w-100 text-center"><span>Kartu Stok</span></h6>
-                                <p class="text-justify">Sekumpulan catatan pembukuan yang berisi rincian lengkap
-                                    aktivitas transaksi yang
-                                    terjadi. Atau dengan kata lain, berisi ringkasan perputaan stok dan sisa saldo
-                                    yang anda miliki. misalkan transaksi pembelian, penjualan, pemesanan, hingga
-                                    pengembalian.</p>
-                            </div> <!-- /.block-style-five -->
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200"
-                            data-aos-delay="100">
-                            <div class="block-style-five">
-                                <div class="icon"><img src="../storage/public/assets/template_user/images/icon/21.svg"
-                                        class="m-auto" alt="">
-                                </div>
-                                <h6 class="title w-100 text-center"><span>Hutang Piutang</span></h6>
-                                <p class="text-justify">Menghitung hutang piutang yang dimiliki usaha anda.
-                                    Menjumlahkan dan mengurangi
-                                    hutang piutang secara akurat.</p>
-                            </div> <!-- /.block-style-five -->
-                        </div>
-                        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-duration="1200"
-                            data-aos-delay="200">
-                            <div class="block-style-five">
-                                <div class="icon"><img src="../storage/public/assets/template_user/images/icon/22.svg"
-                                        class="m-auto" alt="">
-                                </div>
-                                <h6 class="title w-100 text-center"><span>Laporan Stok Barang</span></h6>
-                                <p class="text-justify">Kemudahan dalam mengakses laporan barang secara mudah serta
-                                    cepat. Berisi
-                                    informasi terkait status barang sampai penjualan barang.</p>
-                            </div> <!-- /.block-style-five -->
-                        </div>
-                    </div>
+
 
                     <!--Mobile-->
                     <div class="row justify-content-center d-lg-none d-flex">
@@ -240,81 +182,39 @@
                                     <div class="col-lg-6 ms-auto">
                                         <div class="feedback-meta">
                                             <div class="clientSliderTerbaru">
-                                                <div class="item">
-                                                    <div class="block-style-five text-center">
-                                                        <div class="icon d-flex justify-content-center"><img
-                                                                src="../storage/public/assets/template_user/images/icon/20.svg"
-                                                                alt="">
+                                                {{-- mobile loop all data --}}
+                                                @foreach ($dataFiturMenu as $item)
+                                                    <div class="item">
+                                                        <div class="block-style-five text-center">
+                                                            <div class="icon d-flex justify-content-center"><img
+                                                                    src="{{ asset('/storage/public/' . $item->fitur_menu_image) }}"
+                                                                    alt="">
+                                                            </div>
+                                                            <h6 class="title">
+                                                                <span>{{ $item->fitur_menu_title }}</span>
+                                                            </h6>
+                                                            <p>{{ $item->fitur_menu_description }}</p>
                                                         </div>
-                                                        <h6 class="title"><span>Update Stok Barang Otomatis</span>
-                                                        </h6>
-                                                        <p>Menambah stok barang ketika terjadi pembelian serta
-                                                            mengurangi stok barang
-                                                            ketika
-                                                            terjadi penjualan..</p>
                                                     </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="block-style-five text-center">
-                                                        <div class="icon d-flex justify-content-center"><img
-                                                                src="../storage/public/assets/template_user/images/icon/21.svg"
-                                                                alt="">
+                                                @endforeach
+                                                {{-- @for ($i = 0; $i < 6; $i++)
+                                                    <div class="item">
+                                                        <div class="block-style-five text-center">
+                                                            <div class="icon d-flex justify-content-center"><img
+                                                                    src="../storage/public/assets/template_user/images/icon/20.svg"
+                                                                    alt="">
+                                                            </div>
+                                                            <h6 class="title"><span>Update Stok Barang Otomatis</span>
+                                                            </h6>
+                                                            <p>Menambah stok barang ketika terjadi pembelian serta
+                                                                mengurangi stok barang
+                                                                ketika
+                                                                terjadi penjualan..</p>
                                                         </div>
-                                                        <h6 class="title"><span>Penyesuaian Stok Barang</span>
-                                                        </h6>
-                                                        <p>Anda dapat mencatat pengurangan atau penambahan jumlah
-                                                            barang, begitupun
-                                                            perubahan nilai barang</p>
                                                     </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="block-style-five text-center">
-                                                        <div class="icon d-flex justify-content-center"><img
-                                                                src="../storage/public/assets/template_user/images/icon/22.svg"
-                                                                alt="">
-                                                        </div>
-                                                        <h6 class="title"><span>Retur Barang</span></h6>
-                                                        <p>Mengetahui barang apa saja yang dikembalilkan dari pihak
-                                                            pembeli kepada anda yang
-                                                            disebab karena barang yang diterima tidak sesuai </p>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="block-style-five text-center">
-                                                        <div class="icon d-flex justify-content-center"><img
-                                                                src="../storage/public/assets/template_user/images/icon/20.svg"
-                                                                alt="">
-                                                        </div>
-                                                        <h6 class="title"><span>Kartu Stok</span></h6>
-                                                        <p>Sekumpulan catatan pembukuan yang berisi rincian lengkap
-                                                            aktivitas transaksi yang
-                                                            terjadi. Atau dengan kata lain, berisi ringkasan </p>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="block-style-five text-center">
-                                                        <div class="icon d-flex justify-content-center"><img
-                                                                src="../storage/public/assets/template_user/images/icon/21.svg"
-                                                                alt="">
-                                                        </div>
-                                                        <h6 class="title"><span>Hutang Piutang</span></h6>
-                                                        <p>Menghitung hutang piutang yang dimiliki usaha anda.
-                                                            Menjumlahkan dan mengurangi
-                                                            hutang piutang secara akurat.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="item">
-                                                    <div class="block-style-five text-center">
-                                                        <div class="icon d-flex justify-content-center"><img
-                                                                src="../storage/public/assets/template_user/images/icon/22.svg"
-                                                                alt="">
-                                                        </div>
-                                                        <h6 class="title"><span>Laporan Stok Barang</span></h6>
-                                                        <p>Kemudahan dalam mengakses laporan barang secara mudah
-                                                            serta cepat. Berisi
-                                                            informasi terkait status barang sampai penjualan </p>
-                                                    </div>
-                                                </div>
+                                                @endfor --}}
+
+
                                             </div>
                                             <ul class="d-flex slider-arrow mt-20">
                                                 <li class="prev_clientterbaru position-absolute prev-arrow-fitur">
@@ -340,12 +240,12 @@
             <div class="title-style-four text-center mb-60 md-mb-40">
                 <div class="row">
                     <div class="col-lg-10 m-auto">
-                        <h6>How it works</h6>
-                        <h2>Awesome place to start creating your
-                            <span>first doc with <img
-                                    src="../storage/public/assets/template_user/images/shape/line-shape-2.svg"
-                                    alt=""></span>deski
-                        </h2>
+                        <h6>{{ $workprocces->title }}</h6>
+                        <h2>{{ $workprocces->sub_title }}</h2>
+                        <div class="d-flex justify-content-center">
+                            <img src="../storage/public/assets/template_user/images/shape/line-shape-2.svg" alt=""
+                                class="text-center">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -355,29 +255,29 @@
                     <div class="col-lg-6 col-md-8 ml-auto order-lg-last aos-init aos-animate" data-aos="fade-left"
                         data-aos-duration="1200">
                         <div class="illustration-holder">
-                            <img src="../storage/public/assets/template_user/images/assets/ils_10.svg" alt="">
+                            <img src="{{ asset('/storage/public/' . $workprocces->image) }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-5 order-lg-first aos-init aos-animate" data-aos="fade-right"
                         data-aos-duration="1200">
                         <div class="text-wrapper text-lg-start text-center">
-                            <h6>Documentation</h6>
-                            <h2 class="font-rubik title">A home for your team, best-practices &amp; thoughts.</h2>
+                            <h6>{{ $workprocces->title_description }}</h6>
+                            <h2 class="font-rubik title">{{ $workprocces->description }}</h2>
                             <div class="d-flex flex-column">
                                 <div class="mb-3">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $workprocces->list1 }}
+                                    </p>
                                 </div>
                                 <div class="mb-3">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $workprocces->list2 }}
+                                    </p>
                                 </div>
                                 <div class="mb-40">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $workprocces->list3 }}
+                                    </p>
                                 </div>
                             </div>
                         </div> <!-- /.text-wrapper -->
@@ -389,28 +289,28 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-8 mr-auto aos-init" data-aos="fade-right" data-aos-duration="1200">
                         <div class="illustration-holder">
-                            <img src="../storage/public/assets/template_user/images/assets/ils_11.svg" alt="">
+                            <img src="{{ asset('/storage/public/' . $workprocces->image) }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-5 aos-init" data-aos="fade-left" data-aos-duration="1200">
                         <div class="text-wrapper text-lg-start text-center">
-                            <h6>User Guides</h6>
-                            <h2 class="font-rubik title">Docs for your APIs, products, FAQs and user guides,</h2>
+                            <h6>{{ $workprocces_2->title }}</h6>
+                            <h2 class="font-rubik title">{{ $workprocces_2->description }}</h2>
                             <div class="d-flex flex-column">
                                 <div class="mb-3">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $workprocces_2->list1 }}
+                                    </p>
                                 </div>
                                 <div class="mb-3">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $workprocces_2->list2 }}
+                                    </p>
                                 </div>
                                 <div class="mb-40">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $workprocces_2->list3 }}
+                                    </p>
                                 </div>
                             </div>
                         </div> <!-- /.text-wrapper -->
@@ -423,32 +323,31 @@
                     <div class="col-lg-6 col-md-8 ml-auto order-lg-last aos-init" data-aos="fade-left"
                         data-aos-duration="1200">
                         <div class="illustration-holder">
-                            <img src="../storage/public/assets/template_user/images/assets/ils_12.svg" alt="">
+                            <img src="{{ asset('/storage/public/' . $combine->image) }}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-5 order-lg-first aos-init" data-aos="fade-right" data-aos-duration="1200">
                         <div class="text-wrapper text-lg-start text-center">
-                            <h6>Combine Idea</h6>
-                            <h2 class="font-rubik title">A place to think and track ideas for you &amp; your team
+                            <h6>{{ $combine->title }}</h6>
+                            <h2 class="font-rubik title">{{ $combine->description }}
                             </h2>
                             <div class="d-flex flex-column align-items-center align-items-lg-start">
                                 <div class="mb-3">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $combine->list1 }}
+                                    </p>
                                 </div>
                                 <div class="mb-3">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $combine->list2 }}
+                                    </p>
                                 </div>
                                 <div class="mb-40">
                                     <p class="fs-6"><i
-                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>Lorem
-                                        ipsum dolor sit amet consectetur.</p>
+                                            class="fa fa-check me-2 fs-6 bg-hijau-centang text-white style-3fitur"></i>{{ $combine->list3 }}
+                                    </p>
                                 </div>
-                                <a href="https://wa.me/6281934364063?text=Saya%20tertarik%20dengan%20aplikasi%20Stoki.%20Saya%20ingin%20pesan."
-                                    target="blank"
+                                <a href="{{ $combine->contact }}" target="blank"
                                     class="btn btn-bg-yellowdeep w-50 btn-lg  border-radius-25px fs-12px d-flex justify-content-center align-items-center"
                                     data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100"><i
                                         class="fa fa-whatsapp fs-5 me-2"></i>Hubungi Kami</a>
@@ -700,11 +599,11 @@
                 <div class="row">
                     <div class="col-xl-9 col-lg-10 col-md-10 m-auto">
                         <div class="title-style-twelve text-center pb-120 md-pb-60">
-                            <h2 class="font-gordita"><span>Dapatkan Harga Terbaik<img
+                            <h2 class="font-gordita"><span>{{ $price->harga_title }}<img
                                         src="../storage/public/assets/template_user/images/shape/line-shape-1.svg"
                                         alt="" class=""></span>
                             </h2>
-                            <p class="mt-40 md-mt-20">Dapatkan fitur yang menarik dan sesuai dengan kebutuhan Anda.
+                            <p class="mt-40 md-mt-20">{{ $price->harga_description }}
                             </p>
                         </div>
                     </div>
@@ -712,77 +611,101 @@
 
                 <div class="pricing-table-area-seven">
                     <div class="row align-items-center justify-content-center">
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="pr-table-wrapper md-mb-40">
-                                <img src="../storage/public/assets/template_user/images/icon/paper-plane.png"
-                                    alt="" class="icon style-icon-pricing">
-                                <div class="pack-name">Paket Terjangkau</div>
-                                <ul class="pr-feature">
-                                    <li>Pemantauan Real Time</li>
-                                    <li>Penyesuaian stok</li>
-                                    <li>Notifikasi Stok Kosong</li>
-                                    <div class="pudar">
-                                        <li>Harga jual rata-rata</li>
-                                        <li>Data Barang terlaris</li>
-                                        <li>Pergerakan Barang</li>
-                                        <li>Unlimited Barang</li>
+                        @foreach ($listprice as $item)
+                            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200">
+                                <div class="pr-table-wrapper md-mb-40">
+                                    <img src="{{ asset('/storage/public/' . $item->listprice_image) }}" alt=""
+                                        class="border-0 w-40px style-icon-pricing">
+                                    <div class="pack-name text-center">{{ $item->listprice_title }}</div>
+                                    <ul class="pr-feature d-flex justify-content-center flex-column">
+                                        {{-- {{ if ($service1_active == true) {
+                                            <div class="pudar">
+                                                <li>{{ $item->service1 }}</li>
+                                            </div>
+                                        } else {
+                                            <li>{{ $item->service1 }}</li>
+                                        }
+                                         }}
+                                        <li>{{ $item->service1 }}</li>
+                                        <li>{{ $item->service2 }}</li>
+                                        <li>{{ $item->service3 }}</li>
+                                        <div class="pudar">
+                                            <li>{{ $item->service4 }}</li>
+                                            <li>{{ $item->service5 }}</li>
+                                            <li>{{ $item->service6 }}</li>
+                                            <li>{{ $item->service7 }}</li>
+                                        </div> --}}
+                                        @if (!$item->service1_active == true)
+                                            <div class="pudar">
+                                                <li>{{ $item->service1 }}</li>
+                                            </div>
+                                        @else
+                                            <li>{{ $item->service1 }}</li>
+                                        @endif
+
+                                        @if (!$item->service2_active == true)
+                                            <div class="pudar">
+                                                <li>{{ $item->service2 }}</li>
+                                            </div>
+                                        @else
+                                            <li>{{ $item->service2 }}</li>
+                                        @endif
+
+                                        @if (!$item->service3_active == true)
+                                            <div class="pudar">
+                                                <li>{{ $item->service3 }}</li>
+                                            </div>
+                                        @else
+                                            <li>{{ $item->service3 }}</li>
+                                        @endif
+
+                                        @if (!$item->service4_active == true)
+                                            <div class="pudar">
+                                                <li>{{ $item->service4 }}</li>
+                                            </div>
+                                        @else
+                                            <li>{{ $item->service4 }}</li>
+                                        @endif
+
+                                        @if (!$item->service5_active == true)
+                                            <div class="pudar">
+                                                <li>{{ $item->service5 }}</li>
+                                            </div>
+                                        @else
+                                            <li>{{ $item->service5 }}</li>
+                                        @endif
+
+                                        @if (!$item->service6_active == true)
+                                            <div class="pudar">
+                                                <li>{{ $item->service6 }}</li>
+                                            </div>
+                                        @else
+                                            <li>{{ $item->service6 }}</li>
+                                        @endif
+
+                                        @if (!$item->service7_active == true)
+                                            <div class="pudar">
+                                                <li>{{ $item->service7 }}</li>
+                                            </div>
+                                        @else
+                                            <li>{{ $item->service7 }}</li>
+                                        @endif
+
+                                    </ul>
+                                    <div class="price text-center">{{ $item->price }}/</div>
+                                    <div class="trial-text text-center">{{ $item->listprice_description }}</div>
+                                    <div class="d-flex justify-content-center">
+                                        <a href="{{ $item->button_url }}"
+                                            class="trial-button border-radius-25px text-center"><i
+                                                class="fa fa-whatsapp fs-5 me-2"></i>{{ $item->button_teks }}</a>
+                                        <!-- Tambahkan kelas text-center di sini -->
                                     </div>
-                                </ul>
-                                <div class="price">Rp. 2.500.00,00/<span>Bulan</span></div>
-                                <div class="trial-text">menyediakan sampai 20.000++ kapasitas barang.</div>
-                                <a href="#" class="trial-button border-radius-25px"><i
-                                        class="fa fa-whatsapp fs-5 me-2"></i>Pilih Paket</a>
-                            </div> <!-- /.pr-table-wrapper -->
-                        </div>
-                        <div class="harga position-relative col-lg-4 col-md-6" data-aos="fade-up"
-                            data-aos-duration="1200">
-                            <div class="pr-table-wrapper md-mb-40">
-                                <img src="../storage/public/assets/template_user/images/icon/plane.png" alt=""
-                                    class="icon style-icon-pricing">
-                                <div class="pack-name">Paket Terbaik</div>
-                                <ul class="pr-feature">
-                                    <li>Pemantauan Real Time</li>
-                                    <li>Penyesuaian stok</li>
-                                    <li>Notifikasi Stok Kosong</li>
-                                    <li>Harga jual rata-rata</li>
-                                    <li>Data Barang terlaris</li>
-                                    <div class="pudar">
-                                        <li>Pergerakan Barang</li>
-                                        <li>Unlimited Barang</li>
-                                    </div>
-                                </ul>
-                                <div class="price">Rp. 9.500.00,00/<span>Bulan</span></div>
-                                <div class="trial-text">menyediakan sampai 100.000++ kapasitas barang.</div>
-                                <a href="#" class="trial-button border-radius-25px"><i
-                                        class="fa fa-whatsapp fs-5 me-2"></i>Pilih Paket</a>
-                            </div> <!-- /.pr-table-wrapper -->
-                        </div>
-                        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="1200">
-                            <div class="pr-table-wrapper active md-mb-40">
-                                <img src="../storage/public/assets/template_user/images/icon/space-ship.png"
-                                    alt="" class="icon style-icon-pricing">
-                                <div class="pack-name">Paket Terlengkap</div>
-                                <ul class="pr-feature">
-                                    <li>Pemantauan Real Time</li>
-                                    <li>Penyesuaian stok</li>
-                                    <li>Notifikasi Stok Kosong</li>
-                                    <li>Harga jual rata-rata</li>
-                                    <li>Data Barang terlaris</li>
-                                    <li>Pergerakan Barang</li>
-                                    <li>Unlimited Barang</li>
-                                </ul>
-                                <div class="price">Rp. 15.00.00,00/<span>Bulan</span></div>
-                                <div class="trial-text">menyediakan sampai 500.000++ kapasitas barang.</div>
-                                <a href="#" class="trial-button border-radius-25px"><i
-                                        class="fa fa-whatsapp fs-5 me-2"></i>Pilih Paket</a>
-                                <div class="diskon">
-                                    <span>
-                                    </span>
-                                </div>
-                            </div> <!-- /.pr-table-wrapper -->
-                        </div>
+                                </div> <!-- /.pr-table-wrapper -->
+                            </div>
+                        @endforeach
                     </div>
                 </div> <!-- /.pricing-table-area-seven -->
+
             </div>
 
         </div> <!-- /.pricing-section-seven -->
@@ -933,13 +856,13 @@
                     <div class="col-lg-4">
                         <div class="block-style-thirtySix">
                             <div class="title-style-fourteen text-lg-start text-center">
-                                <div class="upper-title">Galeri Aplikasi</div>
-                                <h2>Tampilan dari Aplikasi Stoki<img
+                                <div class="upper-title">{{ $gallery->gallery_title }}</div>
+                                <h2>{{ $gallery->gallery_subtitle }}<img
                                         src="../storage/public/assets/template_user/images/shape/line-shape-13.svg"
                                         class="m-auto m-lg-0" alt="">
                                 </h2>
                             </div>
-                            <div class="tag-line text-lg-start text-center">Beberapa tampilan dari aplikasi Stoki.
+                            <div class="tag-line text-lg-start text-center">{{ $gallery->gallery_description }}
                             </div>
                             <ul
                                 class="slider-arrows d-flex justify-content-center justify-content-lg-end pt-0 md-pt-10 md-pb-30">
@@ -954,376 +877,23 @@
             </div>
             <div class="slider-wrapper margin-top50px-mockup">
                 <div class="portfolio_slider_two">
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/1.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/1.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/2.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/2.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/3.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/3.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/4.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/4.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/5.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/5.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/6.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/6.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/7.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/7.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/8.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/8.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/9.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/9.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/10.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/10.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/11.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/11.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/12.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/12.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/13.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/13.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/14.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/14.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/15.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/15.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/16.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/16.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/17.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/17.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/18.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/18.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/19.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/19.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/20.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/20.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/11.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/21.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/22.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/22.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/23.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/23.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/24.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/24.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/25.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/25.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/26.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/26.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/27.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/27.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/28.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/28.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/29.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/29.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/30.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/30.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/31.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/31.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/32.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/32.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/33.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/33.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/34.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/34.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/35.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/35.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/36.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/36.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/37.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/37.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/38.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/38.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/39.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/39.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/40.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/40.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="card-block">
-                            <a href="../storage/public/assets/template_user/images/screenshot/desktop/41.png"
-                                data-lightbox="image1" class="w-100 h-100">
-                                <img src="../storage/public/assets/template_user/images/screenshot/desktop/41.png"
-                                    alt="" class="w-100">
-                            </a>
-                        </div>
-                    </div>
+                    @foreach ($galleryimage as $gallery)
+                        @if ($gallery->gallery_active_status === 'yes')
+                            <div class="item">
+                                <div class="card-block">
+                                    <a href="{{ asset('/storage/public/' . $gallery->gallery_image) }}"
+                                        data-lightbox="image1" class="w-100 h-100">
+                                        <div class="item-logo d-flex justify-content-center align-items-center">
+                                            <img src="{{ asset('/storage/public/' . $gallery->gallery_image) }}"
+                                                alt="">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
                 </div> <!-- /.portfolio_slider_two -->
+
             </div> <!-- /.slider-wrapper -->
             <div class="position-absolute style-mockup-desktop d-lg-block d-none">
                 <img src="../storage/public/assets/template_user/images/screenshot/desktop/mockup-mackbook.png"
@@ -1838,8 +1408,7 @@
                                         <div class="tag justify-content-between d-flex">
                                             <span class="d-flex gap-2 justify-content-center align-items-center">
                                                 <img src="../storage/public/assets/template_user/images/media/img_24.png"
-                                                    class="rounded-circle" width="30" height="50"
-                                                    alt="">
+                                                    class="rounded-circle" width="30" height="50" alt="">
                                                 <span>Technology</span>
                                             </span>
                                             <div class="d-flex justify-content-center align-items-center">
@@ -1864,8 +1433,7 @@
                                         <div class="tag justify-content-between d-flex">
                                             <span class="d-flex gap-2 justify-content-center align-items-center">
                                                 <img src="../storage/public/assets/template_user/images/media/img_24.png"
-                                                    class="rounded-circle" width="30" height="50"
-                                                    alt="">
+                                                    class="rounded-circle" width="30" height="50" alt="">
                                                 <span>Technology</span>
                                             </span>
                                             <div class="d-flex justify-content-center align-items-center">
@@ -1932,13 +1500,12 @@
             <div class="clearfix">
                 <div class="row">
                     <div class="col-lg-8 m-auto">
-                        <h2 class="font-gordita" data-aos="fade-up" data-aos-duration="1200">Tertarik dengan
-                            Stoki?
-                            Dapatkan Sekarang!</h2>
-                        <a href="https://wa.me/6281934364063?text=Saya%20tertarik%20dengan%20aplikasi%20Stoki.%20Saya%20ingin%20pesan."
-                            target="blank" class="btn btn-bg-yellowdeep btn-lg mt-50 md-mt-30 border-radius-25px"
-                            data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100"><i
-                                class="fa fa-whatsapp fs-5 me-2"></i>Hubungi Kami</a>
+                        <h2 class="font-gordita" data-aos="fade-up" data-aos-duration="1200">{{ $contacts->title }}
+                        </h2>
+                        <a href="{{ $contacts->button_url }}" target="blank"
+                            class="btn btn-bg-yellowdeep btn-lg mt-50 md-mt-30 border-radius-25px" data-aos="fade-up"
+                            data-aos-duration="1200" data-aos-delay="100"><i
+                                class="fa fa-whatsapp fs-5 me-2"></i>{{ $contacts->button_teks }}</a>
                     </div>
                 </div>
             </div>

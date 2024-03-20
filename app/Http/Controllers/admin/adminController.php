@@ -39,7 +39,7 @@ class AdminController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->route('admin.users')->with('success', 'User created successfully');
+        return redirect()->route('admin.admin.users')->with('success', 'User created successfully');
     }
 
     public function edit($id)
@@ -57,9 +57,17 @@ class AdminController extends Controller
         ]);
 
         $user = User::findOrFail($id);
-        $user->update($request->all());
+        $password = $request->filled('password') ? Hash::make($request->password) : $user->password;
 
-        return redirect()->route('admin.users')->with('success', 'User updated successfully');
+    $user->update([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => $password, // Gunakan password yang telah diambil dari request
+        'role' => $request->role,
+        'status' => $request->status,
+    ]);
+
+        return redirect()->route('admin.admin.users')->with('success', 'User updated successfully');
     }
 
     public function destroy($id)
@@ -67,6 +75,6 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('admin.users')->with('success', 'User deleted successfully');
+        return redirect()->route('admin.admin.users')->with('success', 'User deleted successfully');
     }
 }

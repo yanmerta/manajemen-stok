@@ -1,19 +1,30 @@
 <?php
 use App\Http\Controllers\Admin\adminController;
+use App\Http\Controllers\admin\combineController;
+use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\ContainerMenuController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\FiturContainerMenuController;
 use App\Http\Controllers\admin\FiturController;
+use App\Http\Controllers\admin\FiturMenuController;
+use App\Http\Controllers\admin\Gallery_imageController;
+use App\Http\Controllers\admin\GalleryController;
 use App\Http\Controllers\admin\HomePageController;
 use App\Http\Controllers\admin\HomeSliderController;
 use App\Http\Controllers\admin\HomeSliderImageController;
+use App\Http\Controllers\admin\listPriceController;
 use App\Http\Controllers\admin\LoginController;
 use App\Http\Controllers\Admin\LogoutController;
 use App\Http\Controllers\Admin\MasterLanguageController as AdminMasterLanguage;
+use App\Http\Controllers\admin\Paket_TerjangkauController;
+use App\Http\Controllers\admin\PaketTerbaikController;
+use App\Http\Controllers\admin\PriceController;
 use App\Http\Controllers\admin\ProfileController;
+use App\Http\Controllers\admin\workprocces_2Controller;
+use App\Http\Controllers\admin\workproccesController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\FiturMenuController;
-use App\Http\Controllers\admin\FiturContainerMenuController;
+
 
 
 
@@ -92,6 +103,50 @@ Route::group(
     Route::get('fitur-container/{id}/edit', [FiturContainerMenuController::class, 'edit'])->name('fiturmenu.edit');
     Route::put('fitur/{id}/update', [FiturContainerMenuController::class, 'update'])->name('fiturmenu.update');
     Route::delete('fitur/{id}/delete', [FiturContainerMenuController::class, 'destroy'])->name('fiturmenu.delete');
+
+
+    Route::get('/workprocces', [workproccesController::class, 'index'])->name('workprocces.index');
+    Route::post('/workprocces/store', [workproccesController::class, 'store'])->name('workprocces.store');
+    Route::put('/workprocces/{id}', [workproccesController::class, 'update'])->name('workprocces.update');
+
+    Route::get('/workprocces_2', [workprocces_2Controller::class, 'index'])->name('workprocces_2.index');
+    Route::post('/workprocces_2/store', [workprocces_2Controller::class, 'store'])->name('workprocces_2.store');
+    Route::put('/workprocces_2/{id}', [workprocces_2Controller::class, 'update'])->name('workprocces_2.update');
+
+
+    Route::get('gallery/image', [Gallery_imageController::class, 'index'])->name('gallery.image.index');
+    Route::get('gallery/image/create', [Gallery_imageController::class, 'create'])->name('gallery.image.create');
+    Route::post('gallery/image/store', [Gallery_imageController::class, 'store'])->name('gallery.image.store');
+    Route::get('gallery/image/{id}/edit', [Gallery_imageController::class, 'edit'])->name('gallery.image.edit');
+    Route::put('gallery/image/{id}/update', [Gallery_imageController::class, 'update'])->name('gallery.image.update');
+    Route::delete('gallery/image/{id}/delete', [Gallery_imageController::class, 'destroy'])->name('gallery.image.delete');
+
+
+    Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
+    Route::post('/gallery/store', [GalleryController::class, 'store'])->name('gallery.store');
+    Route::put('/gallery/{id}', [GalleryController::class, 'update'])->name('gallery.update');
+
+    Route::get('/combine', [combineController::class, 'index'])->name('combine.index');
+    Route::post('/combine/store', [combineController::class, 'store'])->name('combine.store');
+    Route::put('/combine/{id}', [combineController::class, 'update'])->name('combine.update');
+
+    Route::get('/price', [PriceController::class, 'index'])->name('price.index');
+    Route::post('/price/store', [PriceController::class, 'store'])->name('price.store');
+    Route::put('/price/{id}', [PriceController::class, 'update'])->name('price.update');
+
+
+    Route::get('listprice/', [listPriceController::class, 'index'])->name('listprice.index');
+    Route::get('listprice/create', [ListPriceController::class, 'create'])->name('listprice.create');
+    Route::post('listprice/store', [ListPriceController::class, 'store'])->name('listprice.store');
+    Route::get('listprice/{id}/edit', [ListPriceController::class, 'edit'])->name('listprice.edit');
+    Route::put('listprice/{id}/update', [ListPriceController::class, 'update'])->name('listprice.update');
+    Route::delete('listprice/{id}/delete', [ListPriceController::class, 'destroy'])->name('listprice.delete');
+
+
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+    Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
+    Route::put('/contact/{id}', [ContactController::class, 'update'])->name('contact.update');
+
 });
 
 Route::get('/list', [AdminMasterLanguage::class, 'list'])->name('masterLanguageList');

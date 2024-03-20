@@ -23,12 +23,10 @@ class LoginController extends Controller
         return view('admin.auth.login', $viewData);
     }
 
-
-
     public function login_proses(Request $request)
     {
-         // Validate the form data
-         $validator = Validator::make($request->all(), [
+        // Validate the form data
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required',
         ]);
@@ -44,12 +42,18 @@ class LoginController extends Controller
 
         // Attempt to authenticate the user
         if (Auth::attempt($credentials)) {
-            return redirect()->route('admin.admin.dashboard')->with('success', 'Yeay, Kamu berhasil Login');
+            // Check if the user is active
+            $user = Auth::user();
+            if ($user->status == 'active') {
+                return redirect()->route('admin.admin.dashboard')->with('success', 'Yeay, Kamu berhasil Login');
+            } else {
+                Auth::logout();
+                return redirect()->route('login')->with('failed', 'Akun Anda tidak aktif. Silakan hubungi administrator.');
+            }
         } else {
             return redirect()->route('login')->with('failed', 'Email atau Password Salah');
         }
     }
-
 
     public function logout()
     {

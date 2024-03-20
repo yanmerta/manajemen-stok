@@ -113,51 +113,75 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="{{ route('admin.admin.fitur.index') }}" class="nav-link">
+                     <a href="{{ route('admin.admin.hms.image.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Home Image Slider</p>
+                         <p>Image Slider</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="{{ route('admin.admin.hms.image.index') }}" class="nav-link">
+                     <a href="{{ route('admin.admin.container.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Projects</p>
+                         <p>Container</p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="{{ route('admin.admin.fitur.index') }}" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>Fitur</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.fiturmenu.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Project Add</p>
+                         <p>Fitur Menu</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="pages/examples/project-edit.html" class="nav-link">
+                     <a href="{{ route('admin.workprocces.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Project Edit</p>
+                         <p>WorkProcces</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="pages/examples/project-detail.html" class="nav-link">
+                     <a href="{{ route('admin.workprocces_2.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Project Detail</p>
+                         <p>WorkProcces 2</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="{{ route('admin.gallery.image.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Contacts</p>
+                         <p>Gallery Image</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="pages/examples/faq.html" class="nav-link">
+                     <a href="{{ route('admin.gallery.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>FAQ</p>
+                         <p>Gallery</p>
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="pages/examples/contact-us.html" class="nav-link">
+                     <a href="{{ route('admin.combine.index') }}" class="nav-link">
                          <i class="far fa-circle nav-icon"></i>
-                         <p>Contact us</p>
+                         <p>Combine</p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="{{ route('admin.price.index') }}" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>Price</p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="{{ route('admin.listprice.index') }}" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>List Price</p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="{{ route('admin.contact.index') }}" class="nav-link">
+                         <i class="far fa-circle nav-icon"></i>
+                         <p>Contact</p>
                      </a>
                  </li>
              </ul>

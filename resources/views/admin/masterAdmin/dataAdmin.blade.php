@@ -50,7 +50,10 @@
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->role }}</td>
-                                                <td>{{ $user->status }}</td>
+                                                <td>
+                                                    <span
+                                                        class="badge {{ $user->status === 'active' ? 'badge-success' : 'badge-danger' }}">{{ ucfirst($user->status) }}</span>
+                                                </td>
                                                 <td>
                                                     <div class="btn-group dropleft">
                                                         <button class="btn btn-success dropdown-toggle" type="button"
@@ -63,7 +66,6 @@
                                                                 href="{{ route('admin.admin.users.edit', ['user' => $user->id]) }}">
                                                                 Edit
                                                             </a>
-
                                                             <form
                                                                 action="{{ route('admin.admin.users.delete', ['user' => $user->id]) }}"
                                                                 method="post" id="delete-form">
@@ -73,20 +75,18 @@
                                                                     Delete
                                                                 </button>
                                                             </form>
+                                                        </div>
+                                                    </div>
                                                 </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
-
                         </div>
-                        </td>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
-    </div>
-    </div>
-    </section>
+        </section>
     </div>
 @endsection

@@ -50,15 +50,6 @@ public function update(Request $request, $id)
     $hms = HomeSlider::findOrFail($id);
     $hms->update($validatedData);
 
-    // Handle image update
-    // if ($request->hasFile('image')) {
-
-    //     $imagePath = $request->file('image')->store('uploads', 'public');
-    //     $hms->images()->update([
-    //         'image_path' => $imagePath,
-    //     ]);
-    // }
-
     return redirect()->back()->with('success', 'Hms data updated successfully');
 }
 }

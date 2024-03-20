@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.users') }}">User List</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.admin.users') }}">User List</a></li>
                             <li class="breadcrumb-item active">Edit User</li>
                         </ol>
                     </div>
@@ -24,7 +24,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{ route('admin.users.update', ['user' => $user->id]) }}" method="POST"
+                                <form action="{{ route('admin.admin.users.update', ['user' => $user->id]) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')

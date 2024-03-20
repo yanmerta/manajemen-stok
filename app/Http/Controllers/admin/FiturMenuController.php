@@ -14,12 +14,6 @@ class FiturMenuController extends Controller
         return view('admin.fitur.index', compact('fitur', 'pageTitle'));
     }
 
-    public function create()
-    {
-        $pageTitle = 'Create New Home Data';
-        return view('admin.home.homedatacreate', compact('pageTitle'));
-    }
-
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -42,13 +36,6 @@ class FiturMenuController extends Controller
         return redirect()->route('admin.home.index')->with('success', 'Home data created successfully');
     }
 
-    public function edit($fitur_id)
-    {
-        // $home = Home::find($home_id);
-        $fitur = Fitur::find($fitur_id);
-        $pageTitle = 'Edit Home Data - ' . $fitur->fitur_title;
-        return view('admin.home.homepageedit', compact('fitur', 'pageTitle'));
-    }
 
     public function update(Request $request, $id)
     {
