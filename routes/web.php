@@ -22,7 +22,6 @@ use App\Http\Controllers\admin\PriceController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\workprocces_2Controller;
 use App\Http\Controllers\admin\workproccesController;
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user\FrontpageController;
 
@@ -33,11 +32,11 @@ use App\Http\Controllers\user\FrontpageController;
 
 
     // Halaman Frontpage
-    Route::get('/', [HomeController::class, 'index'])->name('frontpage.index');
-    Route::get('/fitur', [HomeController::class, 'fitur'])->name('frontpage.fitur');
-    Route::get('/gallery', [HomeController::class, 'gallery'])->name('frontpage.gallery');
-    Route::get('/price', [HomeController::class, 'price'])->name('frontpage.price');
-    Route::get('/blog', [HomeController::class, 'blog'])->name('frontpage.blog');
+    Route::get('/', [FrontpageController::class, 'index'])->name('frontpage.index');
+    Route::get('/fitur', [FrontpageController::class, 'fitur'])->name('frontpage.fitur');
+    Route::get('/gallery', [FrontpageController::class, 'gallery'])->name('frontpage.gallery');
+    Route::get('/price', [FrontpageController::class, 'price'])->name('frontpage.price');
+    Route::get('/blog', [FrontpageController::class, 'blog'])->name('frontpage.blog');
 
     // Halaman Login admin
     Route::get('/admin', [LoginController::class, 'index'])->name('login');

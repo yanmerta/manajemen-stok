@@ -75,7 +75,7 @@
             <div class="text-center">
                 <a href="index3.html" class="brand-link">
                     <img src="{{ asset('storage/public/assets/template_admin/dist/img/AdminLTELogo.png') }}"
-                        width="15%" style="max-height: 20px">
+                        width="15%" style="max-height: 30px">
                     <span class="brand-text font-weight-light">MANAJEMEN STOK ATK</span>
                 </a>
             </div>

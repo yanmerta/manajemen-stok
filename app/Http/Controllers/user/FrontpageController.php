@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\user;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Home;
 use App\Models\HomeSlider;
 use App\Models\HomeImageSlider;
-use Illuminate\Http\Request;
 use App\Models\Fitur;
 use App\Models\ContainerMenu;
 use App\Models\FiturContainerMenu;
@@ -23,48 +24,58 @@ class FrontpageController extends Controller
     public function index(){
         $data = Home::all();
         $homeSlider = HomeSlider::all();
-        $fitur = Fitur::all();
-        $procces = WorkProcces::all();
-        $gallery = Gallery::all();
-        $workprocces = WorkProcces_2::all();
         $combine = Combine::all();
-        $price = Price::all();
         $contacts = Contact::all();
         return view('user.frontpage.home', [
             'data'=> $data[0],
             'homeSlider' => $homeSlider[0],
-            'fitur' => $fitur[0],
+            // 'fitur' => $fitur[0],
             'homeSliderImage' => HomeImageSlider::all(),
             'container' => ContainerMenu::all(),
-            'dataFiturMenu' => FiturContainerMenu::all(),
-            'workprocces' => $procces[0],
-            'workprocces_2' => $workprocces[0],
-            'gallery' => $gallery[0],
-            'galleryimage' => GalleryImage::all(),
             'combine' => $combine[0],
-            'price' => $price[0],
-            'listprice' => ListPrice::all(),
             'contacts' => $contacts[0],
+            'active' => 'index'
 
         ]);
     }
+
     public function fitur(){
         $fitur = Fitur::all();
         $procces = WorkProcces::all();
         $workprocces = WorkProcces_2::all();
-    return view('user.frontpage.home', [
-        'fitur' => $fitur[0],
-        'workprocces' => $procces[0],
-        'workprocces_2' => $workprocces[0],
-    ]);
-}
-    public function gallery(){
-        $gallery = Gallery::all();
-    return view('user.frontpage.galeriaplikasi', [
-        'gallery' => $gallery[0],
-        'galleryimage' => GalleryImage::all(),
-    ]);
-
+        $combine = Combine::all();
+        return view('user.frontpage.fitur', [
+            'dataFiturMenu' => FiturContainerMenu::all(),
+            'fitur' => $fitur[0],
+            'workprocces' => $procces[0],
+            'workprocces_2' => $workprocces[0],
+            'combine' => $combine[0],
+            'active' => 'fitur'
+        ]);
     }
 
+    public function gallery(){
+        $gallery = Gallery::all();
+        return view ('user.frontpage.galeriaplikasi', [
+            'gallery' => $gallery[0],
+            'galleryimage' => GalleryImage::all(),
+            'active' => 'gallery'
+         ]);
+    }
+
+    public function price(){
+        $price = Price::all();
+        return view ('user.frontpage.harga', [
+            'price' => $price[0],
+            'listprice' => ListPrice::all(),
+            'active' => 'price'
+        ]);
+    }
+
+    public function blog(){
+        return view ('user.frontpage.blog', [
+            'active' => 'blog'
+        ]);
+    }
 }
+
