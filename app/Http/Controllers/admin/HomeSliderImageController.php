@@ -10,14 +10,15 @@ class HomeSliderImageController extends Controller
 {
     public function index()
     {
-        $pageTitle = 'Home Image Slider'; 
+        $pageTitle = 'Admin | Home Image Slider'; 
         $images = HomeImageSlider::all();
         return view('admin.homeslider_image.index', compact('images', 'pageTitle'));
     }
 
     public function create()
     {
-        return view('admin.homeslider_image.create');
+        $pageTitle = 'Admin | Create Home Image Slider'; 
+        return view('admin.homeslider_image.create', compact('pageTitle'));
     }
 
     public function store(Request $request)

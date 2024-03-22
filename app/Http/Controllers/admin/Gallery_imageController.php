@@ -10,14 +10,15 @@ class Gallery_imageController extends Controller
 {
     public function index()
     {
-        $pageTitle = 'Gallery'; 
+        $pageTitle = 'Admin | Gallery'; 
         $gallery = GalleryImage::all();
         return view('admin.galleryimage.index', compact('gallery', 'pageTitle'));
     }
 
     public function create()
     {
-        return view('admin.galleryimage.create');
+        $pageTitle = 'Admin | Create Gallery';
+        return view('admin.galleryimage.create',compact('pageTitle'));
     }
 
     public function store(Request $request)

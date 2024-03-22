@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin | Dashboard</title>
+    <title>{{ $pageTitle }}</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -74,6 +74,8 @@
             <!-- Brand Logo -->
             <div class="text-center">
                 <a href="index3.html" class="brand-link">
+                    <img src="{{ asset('storage/public/assets/template_admin/dist/img/AdminLTELogo.png') }}"
+                        width="15%" style="max-height: 20px">
                     <span class="brand-text font-weight-light">MANAJEMEN STOK ATK</span>
                 </a>
             </div>
@@ -83,8 +85,19 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image pt-3">
-                        <img src="{{ asset('storage/public/assets/template_admin/dist/img/blank.png') }}"
-                            class="img-circle elevation-2" alt="User Image">
+                        {{-- <img src="{{ asset('storage/public/assets/template_admin/dist/img/blank.png') }}"
+                            class="img-circle elevation-2" alt="User Image"> --}}
+                        @if (Auth::check())
+                            @if (Auth::user()->photo)
+                                <img src="{{ asset('storage/public/' . Auth::user()->photo) }}"
+                                    class="img-circle elevation-2"
+                                    style="border-radius: 50%; object-fit: cover; object-position: center; width: 40px; height: 42px;"
+                                    alt="User Image">
+                            @else
+                                <img src="{{ asset('storage/public/assets/template_admin/dist/img/blank.png') }}"
+                                    class="img-circle elevation-2" alt="User Image">
+                            @endif
+                        @endif
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ Auth::user()->name }}</a>

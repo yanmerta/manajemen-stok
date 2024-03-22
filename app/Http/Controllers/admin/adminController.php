@@ -11,15 +11,16 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $users = User::all(); // Ganti 'User' dengan model User yang sebenarnya
-        return view('admin.masterAdmin.dataAdmin', ['users' => $users]);
+        $users = User::all(); 
+        $pageTitle = 'Admin | Data User';
+        return view('admin.masterAdmin.dataAdmin', compact('users', 'pageTitle'));
     }
 
     public function create()
     {
-        return view('admin.masterAdmin.createdataAdmin');
-    }
-
+        $pageTitle = 'Admin | Create Data User';
+        return view('admin.masterAdmin.createdataAdmin', compact('pageTitle'));
+    } 
     public function store(Request $request)
     {
         $request->validate([
@@ -27,48 +28,61 @@ class AdminController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:6',
             'role' => 'required',
-            'status' => 'required', // Tambahkan baris ini untuk field 'status'
+            'status' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust validation rules as needed
         ]);
-
-        // Menggunakan Hash::make untuk mengenkripsi password
+    
+        $imagePath = $request->file('photo')->store('uploads', 'public');
+    
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => $request->role,
             'status' => $request->status,
+            'photo' => $imagePath,
         ]);
-
+    
         return redirect()->route('admin.admin.users')->with('success', 'User created successfully');
     }
 
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.masterAdmin.editdataAdmin', compact('user'));
+        $pageTitle = 'Admin | Edit Data User';
+        return view('admin.masterAdmin.editdataAdmin', compact('user', 'pageTitle'));
     }
 
     public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'role' => 'required',
-        ]);
-
-        $user = User::findOrFail($id);
-        $password = $request->filled('password') ? Hash::make($request->password) : $user->password;
-
-    $user->update([
-        'name' => $request->name,
-        'email' => $request->email,
-        'password' => $password, // Gunakan password yang telah diambil dari request
-        'role' => $request->role,
-        'status' => $request->status,
+{
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required|email|unique:users,email,' . $id,
+        'role' => 'required',
+        'status' => 'required',
+        'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
-        return redirect()->route('admin.admin.users')->with('success', 'User updated successfully');
+    $user = User::findOrFail($id);
+    $password = $request->filled('password') ? Hash::make($request->password) : $user->password;
+
+    $data = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => $password,
+        'role' => $request->role,
+        'status' => $request->status,
+    ];
+
+    if ($request->hasFile('photo')) {
+        $imagePath = $request->file('photo')->store('uploads', 'public');
+        $data['photo'] = $imagePath;
     }
+
+    $user->update($data);
+
+    return redirect()->route('admin.admin.users')->with('success', 'User updated successfully');
+}
 
     public function destroy($id)
     {

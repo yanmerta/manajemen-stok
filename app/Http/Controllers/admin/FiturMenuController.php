@@ -10,7 +10,7 @@ class FiturMenuController extends Controller
     public function index()
     {
         $fitur = Fitur_Menu::all();
-        $pageTitle = 'Fitur Data';
+        $pageTitle = 'Admin | Fitur Data';
         return view('admin.fitur.index', compact('fitur', 'pageTitle'));
     }
 

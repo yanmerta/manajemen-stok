@@ -25,8 +25,8 @@
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ route('login') }}">
-                <img src="../storage/public/assets/template_admin/dist/img/logo-sistem-atk.png" class="img-fluid"
-                    width="200" height="auto">
+                <img src="../storage/public/assets/template_admin/dist/img/logo.png" class="img-fluid" width="200"
+                    height="auto">
 
                 <br>
                 {{-- <img src="../storage/public/assets/template_admin/dist/img/logo-sistem-atk.png" class="img-fluid"> --}}

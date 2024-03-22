@@ -11,7 +11,7 @@ class HomeSliderController extends Controller
 {
     public function index()
     {
-        $pageTitle = 'Home'; 
+        $pageTitle = 'Admin | Home'; 
         $homeSlider = HomeSlider::all()[0];
         // dd($homeSlider);
         return view('admin.homeslider.index', compact('homeSlider', 'pageTitle')); // Updated variable names

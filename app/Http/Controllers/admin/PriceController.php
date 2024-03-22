@@ -11,7 +11,7 @@ class PriceController extends Controller
     public function index()
     {
         $price = Price::all();
-        $pageTitle = 'price';
+        $pageTitle = 'Admin | price';
         return view('admin.price.price', compact('price', 'pageTitle'));
     }
 

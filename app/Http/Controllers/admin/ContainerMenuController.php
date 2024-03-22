@@ -10,7 +10,7 @@ class ContainerMenuController extends Controller
 {
     public function index()
     {
-        $pageTitle = 'Container'; 
+        $pageTitle = 'Admin | Container'; 
         $container = ContainerMenu::all();
         return view('admin.container_menu.index', compact('container', 'pageTitle'));
     }

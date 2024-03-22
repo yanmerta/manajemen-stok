@@ -13,7 +13,7 @@ class HomePageController extends Controller
     public function index()
     {
         $homes = Home::all();
-        $pageTitle = 'Home Data List';
+        $pageTitle = 'Admin | Home Data List';
         return view('admin.home.homedatalist', compact('homes', 'pageTitle'));
     }
 

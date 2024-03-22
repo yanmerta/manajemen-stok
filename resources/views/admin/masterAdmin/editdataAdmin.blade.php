@@ -89,6 +89,8 @@
                                     <div class="form-group">
                                         <label for="photo">Profile Photo</label>
                                         <input type="file" class="form-control-file" id="photo" name="photo">
+                                        <img src="{{ asset('/storage/public/' . $user->photo) }}" width="50"
+                                            alt="Current Image">
                                         @error('photo')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror

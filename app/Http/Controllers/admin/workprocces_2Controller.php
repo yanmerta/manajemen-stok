@@ -11,7 +11,7 @@ class workprocces_2Controller extends Controller
     public function index()
     {
         $workprocces = WorkProcces_2::all();
-        $pageTitle = 'WorkProcces_2';
+        $pageTitle = 'Admin | WorkProcces_2';
         return view('admin.workprocces_2.Workprocces2', compact('workprocces', 'pageTitle'));
     }
 

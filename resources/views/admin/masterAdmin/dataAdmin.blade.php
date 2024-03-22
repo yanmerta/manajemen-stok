@@ -39,8 +39,9 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Role</th>
-                                            <th>Status</th>
-                                            <th width="80">Actions</th>
+                                            <th class="text-center">Status</th>
+                                            <th width="80">
+                                                Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,7 +51,7 @@
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->role }}</td>
-                                                <td>
+                                                <td class="text-center">
                                                     <span
                                                         class="badge {{ $user->status === 'active' ? 'badge-success' : 'badge-danger' }}">{{ ucfirst($user->status) }}</span>
                                                 </td>

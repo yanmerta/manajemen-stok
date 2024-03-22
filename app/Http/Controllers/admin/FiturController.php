@@ -11,7 +11,7 @@ class FiturController extends Controller
     public function index()
     {
         $fitur = Fitur::all();
-        $pageTitle = 'Home Data';
+        $pageTitle = 'Admin | Home Data';
         return view('admin.fitur.index', compact('fitur', 'pageTitle'));
     }
 

@@ -11,7 +11,7 @@ class combineController extends Controller
     public function index()
     {
         $combine = Combine::all();
-        $pageTitle = 'combine';
+        $pageTitle = 'Admin | combine';
         return view('admin.combine.combine', compact('combine', 'pageTitle'));
     }
 

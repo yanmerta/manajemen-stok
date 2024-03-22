@@ -11,7 +11,7 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::all();
-        $pageTitle = 'Contact';
+        $pageTitle = 'Admin | Contact';
         return view('admin.contact.contact', compact('contacts', 'pageTitle'));
     }
 

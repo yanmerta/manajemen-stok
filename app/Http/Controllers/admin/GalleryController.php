@@ -11,7 +11,7 @@ class GalleryController extends Controller
     public function index()
     {
         $gallery = Gallery::all();
-        $pageTitle = 'Gallery';
+        $pageTitle = 'Admin | Gallery';
         return view('admin.Gallery.Gallery', compact('gallery', 'pageTitle'));
     }
 

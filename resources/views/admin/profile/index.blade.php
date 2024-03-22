@@ -9,18 +9,52 @@
                         <h2 class="mb-0">{{ __('Profile') }}</h2>
                     </div>
                     <div class="card-body">
+                        @if (session('success'))
+                            <div id="successAlert" class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                            <script>
+                                window.setTimeout(function() {
+                                    $("#successAlert").fadeTo(500, 0).slideUp(500, function() {
+                                        $(this).remove();
+                                    });
+                                }, 5000); // 5000 milliseconds = 5 seconds
+                            </script>
+                        @endif
+
+                        @if (session('error'))
+                            <div id="errorAlert" class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                            <script>
+                                window.setTimeout(function() {
+                                    $("#errorAlert").fadeTo(500, 0).slideUp(500, function() {
+                                        $(this).remove();
+                                    });
+                                }, 5000); // 5000 milliseconds = 5 seconds
+                            </script>
+                        @endif
 
                         @if (session('status'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <div id="statusAlert" class="alert alert-success alert-dismissible fade show" role="alert">
                                 {{ session('status') }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
                             </div>
+                            <script>
+                                window.setTimeout(function() {
+                                    $("#statusAlert").fadeTo(500, 0).slideUp(500, function() {
+                                        $(this).remove();
+                                    });
+                                }, 5000); // 5000 milliseconds = 5 seconds
+                            </script>
                         @endif
+
 
                         <div class="row">
                             <div class="col-md-4">
                                 @if ($user->photo)
-                                    <img src="{{ asset('storage/public/photos/' . $user->photo) }}"
+                                    <img src="{{ asset('storage/public/' . $user->photo) }}"
                                         class="img-thumbnail rounded mx-auto d-block">
                                 @else
                                     <img alt="Logo" src=" ../storage/public/assets/template_admin/dist/img/blank.png"
@@ -123,12 +157,23 @@
                                     <div class="row mb-0">
                                         <div class="col-md-6 offset-md-4">
                                             <button type="submit" class="btn btn-primary">
-                                                {{ __('Update Profile') }}
+                                                <i class="fas fa-edit"></i> {{ __('Update Profile') }}
                                             </button>
                                         </div>
                                     </div>
                                 </form>
-
+                                <form method="POST" id="delete-form"
+                                    action="{{ route('admin.profile.delete-photo', ['id' => $user->id]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="row mt-3">
+                                        <div class="col-md-6 offset-md-4">
+                                            <button type="submit" class="btn btn-danger">
+                                                <i class="fas fa-trash"></i> Delete Profile Photo
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

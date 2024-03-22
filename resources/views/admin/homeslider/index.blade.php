@@ -39,7 +39,7 @@
                                 <textarea value="" name="hms_description" class="form-control" rows="3" required>{{ $homeSlider->hms_description }}</textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Edit</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>
                 </div>

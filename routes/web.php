@@ -24,6 +24,7 @@ use App\Http\Controllers\admin\workprocces_2Controller;
 use App\Http\Controllers\admin\workproccesController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\user\FrontpageController;
 
 
 
@@ -31,10 +32,16 @@ use Illuminate\Support\Facades\Route;
 
 
 
+    // Halaman Frontpage
+    Route::get('/', [HomeController::class, 'index'])->name('frontpage.index');
+    Route::get('/fitur', [HomeController::class, 'fitur'])->name('frontpage.fitur');
+    Route::get('/gallery', [HomeController::class, 'gallery'])->name('frontpage.gallery');
+    Route::get('/price', [HomeController::class, 'price'])->name('frontpage.price');
+    Route::get('/blog', [HomeController::class, 'blog'])->name('frontpage.blog');
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('/admin', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'login_proses'])->name('login.proses');
+    // Halaman Login admin
+    Route::get('/admin', [LoginController::class, 'index'])->name('login');
+    Route::post('/login', [LoginController::class, 'login_proses'])->name('login.proses');
 
 
 Route::group(
@@ -47,6 +54,7 @@ Route::group(
     //Update Perofile Admin
     Route::get('/profile', [ProfileController::class,'index',])->name('profile.index');
     Route::patch('/profile/{id}', [ProfileController::class,'update',])->name('profile.update');
+    Route::delete('/admin/profile/{id}/delete-photo', [ProfileController::class, 'deletePhoto'])->name('profile.delete-photo');
 
     //Manajamen Data User
     Route::get('/admin/users', [adminController::class, 'index'])->name('admin.users');
@@ -73,7 +81,7 @@ Route::group(
     Route::post('/admin/hms/update/{id}', [HomeSliderController::class, 'update'])->name('admin.hms.update');
     Route::delete('/admin/hms/destroy/{id}', [HomeSliderController::class, 'destroy'])->name('admin.hms.destroy');  
     
-    
+    // Home Slider Image
     Route::get('homeslider/image', [HomeSliderImageController::class, 'index'])->name('admin.hms.image.index');
     Route::get('homeslider/image/create', [HomeSliderImageController::class, 'create'])->name('admin.hms.image.create');
     Route::post('homeslider/image/store', [HomeSliderImageController::class, 'store'])->name('admin.hms.image.store');
@@ -82,7 +90,7 @@ Route::group(
     Route::delete('homeslider/image/{id}/delete', [HomeSliderImageController::class, 'destroy'])->name('admin.hms.image.delete');
 
 
-     
+    //  container
     Route::get('container/', [ContainerMenuController::class, 'index'])->name('admin.container.index');
     Route::get('container/create', [ContainerMenuController::class, 'create'])->name('admin.container.create');
     Route::post('container/store', [ContainerMenuController::class, 'store'])->name('admin.container.store');
@@ -90,7 +98,7 @@ Route::group(
     Route::put('container/{id}/update', [ContainerMenuController::class, 'update'])->name('admin.container.update');
     Route::delete('container/{id}/delete', [ContainerMenuController::class, 'destroy'])->name('admin.container.delete');
     
-
+    // Halaman Fitur
     Route::get('/admin/fitur', [FiturController::class, 'index'])->name('admin.fitur.index');
     Route::post('/fitur/store', [FiturController::class, 'store'])->name('admin.home.store');
     Route::get('home/{home_id}/edit', [FiturController::class, 'edit'])->name('admin.home.edit');
@@ -113,7 +121,7 @@ Route::group(
     Route::post('/workprocces_2/store', [workprocces_2Controller::class, 'store'])->name('workprocces_2.store');
     Route::put('/workprocces_2/{id}', [workprocces_2Controller::class, 'update'])->name('workprocces_2.update');
 
-
+    // Halaman Gallery
     Route::get('gallery/image', [Gallery_imageController::class, 'index'])->name('gallery.image.index');
     Route::get('gallery/image/create', [Gallery_imageController::class, 'create'])->name('gallery.image.create');
     Route::post('gallery/image/store', [Gallery_imageController::class, 'store'])->name('gallery.image.store');
@@ -130,6 +138,7 @@ Route::group(
     Route::post('/combine/store', [combineController::class, 'store'])->name('combine.store');
     Route::put('/combine/{id}', [combineController::class, 'update'])->name('combine.update');
 
+    // Halaman Price
     Route::get('/price', [PriceController::class, 'index'])->name('price.index');
     Route::post('/price/store', [PriceController::class, 'store'])->name('price.store');
     Route::put('/price/{id}', [PriceController::class, 'update'])->name('price.update');
