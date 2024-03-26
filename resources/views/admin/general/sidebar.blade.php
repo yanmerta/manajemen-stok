@@ -108,6 +108,12 @@
                      </a>
                  </li>
                  <li class="nav-item">
+                     <a href="{{ route('admin.testimoni.index') }}" class="nav-link">
+                         <i class="fas fa-circle nav-icon"></i>
+                         <p>Testimoni</p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
                      <a href="{{ route('admin.contact.index') }}" class="nav-link">
                          <i class="fas fa-circle nav-icon"></i>
                          <p>Contact</p>

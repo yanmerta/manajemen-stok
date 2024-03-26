@@ -1,4 +1,3 @@
-use App\Models\Post;
 @extends('user.general.layout')
 @section('content')
     <div class="feature-blog-one pt-170 pb-120 md-pt-100 md-pb-60" id="blog">
@@ -25,7 +24,7 @@ use App\Models\Post;
                                     class="rounded-circle" width="30" height="30" alt="">
                                 <span>Technology</span>
                             </span>
-                            <span>{{ $post->created_at->format('d F Y') }}</span>
+                            <span>24 April 2022</span>
                             <!-- <div class="tag">Technology, 24 Apr. 2022</div> -->
                         </div>
                         <h3><a href="blog.html" class="title">A Discount Cartridge Is Better Ever.</a></h3>

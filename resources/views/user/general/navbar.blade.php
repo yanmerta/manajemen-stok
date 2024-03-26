@@ -26,7 +26,7 @@
                                 <a class="nav-link" href="{{ route('frontpage.price') }}">Harga</a>
                             </li>
                             <li class="nav-item dropdown oren {{ $active === 'testimoni' ? 'active' : '' }}">
-                                <a class="nav-link" href="#testimoni">Testimoni</a>
+                                <a class="nav-link" href="{{ route('frontpage.testimoni') }}">Testimoni</a>
                             </li>
                             <li class="nav-item dropdown oren {{ $active === 'blog' ? 'active' : '' }}">
                                 <a class="nav-link" href="{{ route('frontpage.blog') }}">Blog</a>

@@ -23,33 +23,23 @@
                             <div class="watermark font-gilroy-bold">Testimoni</div>
                             <img src="../storage/public/assets/template_user/images/icon/30.svg" alt=""
                                 class="icon">
+                            <!-- Di dalam file Blade Anda -->
                             <div class="clientSliderOne">
-                                <div class="item">
-                                    <p class="font-rubik">Aplikasi ini bagus dan sangat membantu saya dalam
-                                        mengurus
-                                        kegiatan operasional ATK.</p>
-                                    <div class="d-lg-flex align-items-center">
-                                        <img src="../storage/public/assets/template_user/images/media/img_20.png"
-                                            alt="" class="c_img">
-                                        <div class="info">
-                                            <strong>Pramanta Dharma</strong> <span>Pemilik ATK Nadura</span>
+                                @foreach ($testimonis as $testimoni)
+                                    <div class="item">
+                                        <p class="font-rubik">{{ $testimoni->testi_description }}</p>
+                                        <div class="d-lg-flex align-items-center">
+                                            <img src="{{ asset('/storage/public/' . $testimoni->image) }}" alt=""
+                                                class="img">
+                                            <div class="info">
+                                                <strong>{{ $testimoni->testi_name }}</strong>
+                                                <span>{{ $testimoni->position }}</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <p class="font-rubik">Sangat merekomendasi aplikasi yang berbasis website satu
-                                        ini.
-                                        Selain adanya fitur dan paket yang bisa dipilih, aplikasi ini juga berjalan
-                                        dengan lancar dan tanpa kendala.</p>
-                                    <div class="d-lg-flex align-items-center">
-                                        <img src="../storage/public/assets/template_user/images/media/img_20.png"
-                                            alt="" class="c_img">
-                                        <div class="info">
-                                            <strong>Prama</strong> <span>Pemilik ATK Nadhu Mart</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
+
                             <ul class="d-flex slider-arrow mt-20">
                                 <li class="prev_c"><i class="flaticon-right-arrow"></i></li>
                                 <li class="next_c"><i class="flaticon-right-arrow"></i></li>
@@ -121,8 +111,8 @@
                                     Porro temporibus laborum aliquid? Assumenda mollitia, debitis est totam beatae
                                     laudantium nesciunt?</p>
                                 <div class="d-lg-flex align-items-center">
-                                    <img src="../storage/public/assets/template_user/images/media/img_20.png"
-                                        alt="" class="c_img">
+                                    <img src="../storage/public/assets/template_user/images/media/img_20.png" alt=""
+                                        class="c_img">
                                     <div class="info">
                                         <strong>Prama</strong> <span>Pemilik ATK Nadhu Mart</span>
                                     </div>

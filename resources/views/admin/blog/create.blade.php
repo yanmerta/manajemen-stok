@@ -33,7 +33,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="post_description">Description</label>
-                                        <textarea class="form-control" id="post_description" name="post_description" rows="5"
+                                        <textarea class="form-control" id="post_description" name="post_description" rows="20"
                                             placeholder="Enter description" required></textarea>
                                     </div>
                                     <div class="form-group">

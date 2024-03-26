@@ -22,6 +22,7 @@ use App\Http\Controllers\admin\Paket_TerjangkauController;
 use App\Http\Controllers\admin\PaketTerbaikController;
 use App\Http\Controllers\admin\PriceController;
 use App\Http\Controllers\admin\ProfileController;
+use App\Http\Controllers\admin\TestimoniController;
 use App\Http\Controllers\admin\workprocces_2Controller;
 use App\Http\Controllers\admin\workproccesController;
 use App\Http\Controllers\user\FrontpageController;
@@ -35,9 +36,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
     // Halaman Frontpage
     Route::get('/', [FrontpageController::class, 'index'])->name('frontpage.index');
     Route::get('/fitur', [FrontpageController::class, 'fitur'])->name('frontpage.fitur');
+    Route::get('/testimoni', [FrontpageController::class, 'testimoni'])->name('frontpage.testimoni');
     Route::get('/gallery', [FrontpageController::class, 'gallery'])->name('frontpage.gallery');
     Route::get('/price', [FrontpageController::class, 'price'])->name('frontpage.price');
     Route::get('/blog', [FrontpageController::class, 'blog'])->name('frontpage.blog');
@@ -176,6 +179,14 @@ Route::post('admin/blog/store', [BlogController::class, 'store'])->name('blog.st
 Route::get('admin/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
 Route::put('admin/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
 Route::delete('admin/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.destroy');
+
+
+Route::get('testimoni/', [TestimoniController::class, 'index'])->name('testimoni.index');
+Route::get('testimoni/create', [TestimoniController::class, 'create'])->name('testimoni.create');
+Route::post('testimoni/store', [TestimoniController::class, 'store'])->name('testimoni.store');
+Route::get('testimoni/{id}/edit', [TestimoniController::class, 'edit'])->name('testimoni.edit');
+Route::put('testimoni/{id}/update', [TestimoniController::class, 'update'])->name('testimoni.update');
+Route::delete('testimoni/{id}/delete', [TestimoniController::class, 'destroy'])->name('testimoni.destroy');
 
 });
 

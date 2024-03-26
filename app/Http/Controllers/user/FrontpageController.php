@@ -19,6 +19,7 @@ use App\Models\Price;
 use App\Models\ListPrice;
 use App\Models\Contact;
 use App\Models\Post;
+use App\Models\Testimoni;
 
 class FrontpageController extends Controller
 {
@@ -72,11 +73,17 @@ class FrontpageController extends Controller
             'active' => 'price'
         ]);
     }
+    public function testimoni(){
+        return view ('user.frontpage.testimoni', [
+            'active' => 'testimoni',
+            'testimonis' => Testimoni::all()
+        ]);
+    }
 
     public function blog(){
         return view ('user.frontpage.blog', [
             'active' => 'blog',
-            'blog' => Post::all()
+            'posts' => Post::all()
         ]);
     }
 }
