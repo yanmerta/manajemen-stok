@@ -73,9 +73,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <div class="text-center">
-                <a href="index3.html" class="brand-link">
-                    <img src="{{ asset('storage/public/assets/template_admin/dist/img/AdminLTELogo.png') }}"
-                        width="15%" style="max-height: 30px">
+                <a href="#" class="brand-link">
+                    {{-- <img src="{{ asset('storage/public/assets/template_admin/dist/img/AdminLTELogo.png') }}"
+                        width="15%" style="max-height: 30px"> --}}
                     <span class="brand-text font-weight-light">MANAJEMEN STOK ATK</span>
                 </a>
             </div>
@@ -91,7 +91,7 @@
                             @if (Auth::user()->photo)
                                 <img src="{{ asset('storage/public/' . Auth::user()->photo) }}"
                                     class="img-circle elevation-2"
-                                    style="border-radius: 50%; object-fit: cover; object-position: center; width: 40px; height: 42px;"
+                                    style="border-radius: 50%; object-fit: cover; object-position: center; width: 42px; height: 42px;"
                                     alt="User Image">
                             @else
                                 <img src="{{ asset('storage/public/assets/template_admin/dist/img/blank.png') }}"
@@ -172,6 +172,7 @@
     <!-- AdminLTE for demo purposes -->
     {{-- <script src="{{ asset('storage/public/assets/template_admin/dist/js/demo.js"></script> --}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
     <script src="{{ asset('storage/public/assets/template_admin/dist/js/pages/dashboard.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript">

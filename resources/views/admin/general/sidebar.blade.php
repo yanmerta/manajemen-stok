@@ -24,77 +24,6 @@
              <a href="#" class="nav-link">
                  <i class="nav-icon fas fa-book"></i>
                  <p>
-                     Pages
-                     <i class="fas fa-angle-left right"></i>
-                 </p>
-             </a>
-             <ul class="nav nav-treeview">
-                 <li class="nav-item">
-                     <a href="{{ route('admin.admin.container.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Invoice</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/profile.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Profile</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/e-commerce.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>E-commerce</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/projects.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Projects</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/project-add.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Project Add</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/project-edit.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Project Edit</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/project-detail.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Project Detail</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/contacts.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Contacts</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/faq.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>FAQ</p>
-                     </a>
-                 </li>
-                 <li class="nav-item">
-                     <a href="pages/examples/contact-us.html" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
-                         <p>Contact us</p>
-                     </a>
-                 </li>
-             </ul>
-         </li>
-         <li class="nav-item">
-             <a href="#" class="nav-link">
-                 <i class="nav-icon fas fa-book"></i>
-                 <p>
                      Home
                      <i class="fas fa-angle-left right"></i>
                  </p>
@@ -102,90 +31,118 @@
              <ul class="nav nav-treeview">
                  <li class="nav-item {{ request()->routeIs('admin.home.index') ? 'menu-open active' : '' }}">
                      <a href="{{ route('admin.admin.home.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Home Page</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.admin.hms.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Home Slider</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.admin.hms.image.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Image Slider</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.admin.container.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Container</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.admin.fitur.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Fitur</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.fiturmenu.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Fitur Menu</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.workprocces.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>WorkProcces</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.workprocces_2.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>WorkProcces 2</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.gallery.image.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Gallery Image</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.gallery.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Gallery</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.combine.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Combine</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.price.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Price</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.listprice.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>List Price</p>
                      </a>
                  </li>
                  <li class="nav-item">
                      <a href="{{ route('admin.contact.index') }}" class="nav-link">
-                         <i class="far fa-circle nav-icon"></i>
+                         <i class="fas fa-circle nav-icon"></i>
                          <p>Contact</p>
                      </a>
                  </li>
              </ul>
          </li>
+         <li class="nav-item">
+             <a href="#" class="nav-link">
+                 <i class="nav-icon fas fa-pen"></i>
+                 <p>
+                     Blog
+                     <i class="fas fa-angle-left right"></i>
+                 </p>
+             </a>
+             <ul class="nav nav-treeview">
+                 <li class="nav-item {{ request()->routeIs('admin.home.index') ? 'menu-open active' : '' }}">
+                     <a href="{{ route('admin.category.index') }}" class="nav-link">
+                         <i class="fas fa-circle nav-icon"></i>
+                         <p>category</p>
+                     </a>
+                 </li>
+                 <li class="nav-item {{ request()->routeIs('admin.blog.index') ? 'menu-open active' : '' }}">
+                     <a href="{{ route('admin.blog.index') }}" class="nav-link">
+                         <i class="fas fa-circle nav-icon"></i>
+                         <p>post</p>
+                     </a>
+                 </li>
+                 <li class="nav-item {{ request()->routeIs('admin.home.index') ? 'menu-open active' : '' }}">
+                     <a href="#" class="nav-link">
+                         <i class="fas fa-circle nav-icon"></i>
+                         <p>See Blog</p>
+                     </a>
+                 </li>
+             </ul>
          <li class="nav-header">MASTER DATA</li>
          <li class="nav-item {{ request()->routeIs('admin.admin.users') ? 'menu-open active' : '' }}">
              <a href="{{ route('admin.admin.users') }}" class="nav-link">

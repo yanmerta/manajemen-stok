@@ -1,5 +1,7 @@
 <?php
 use App\Http\Controllers\Admin\adminController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\combineController;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\ContainerMenuController;
@@ -22,8 +24,10 @@ use App\Http\Controllers\admin\PriceController;
 use App\Http\Controllers\admin\ProfileController;
 use App\Http\Controllers\admin\workprocces_2Controller;
 use App\Http\Controllers\admin\workproccesController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\user\FrontpageController;
+use Illuminate\Support\Facades\Route;
+
+
 
 
 
@@ -154,6 +158,24 @@ Route::group(
     Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
     Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
     Route::put('/contact/{id}', [ContactController::class, 'update'])->name('contact.update');
+
+
+
+    Route::get('categories', [CategoryController::class, 'index'])->name('category.index');
+Route::get('categories/create', [CategoryController::class, 'create'])->name('category.create');
+Route::post('categories/store', [CategoryController::class, 'store'])->name('category.store');
+Route::get('categories/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+Route::put('categories/{id}/update', [CategoryController::class, 'update'])->name('category.update');
+Route::delete('categories/{id}/delete', [CategoryController::class, 'destroy'])->name('category.destroy');
+
+
+
+Route::get('admin/blog', [BlogController::class, 'index'])->name('blog.index');
+Route::get('admin/blog/create', [BlogController::class, 'create'])->name('blog.create');
+Route::post('admin/blog/store', [BlogController::class, 'store'])->name('blog.store');
+Route::get('admin/blog/{id}/edit', [BlogController::class, 'edit'])->name('blog.edit');
+Route::put('admin/blog/{id}/update', [BlogController::class, 'update'])->name('blog.update');
+Route::delete('admin/blog/{id}/delete', [BlogController::class, 'destroy'])->name('blog.destroy');
 
 });
 

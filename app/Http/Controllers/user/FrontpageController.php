@@ -18,6 +18,7 @@ use App\Models\Combine;
 use App\Models\Price;
 use App\Models\ListPrice;
 use App\Models\Contact;
+use App\Models\Post;
 
 class FrontpageController extends Controller
 {
@@ -74,7 +75,8 @@ class FrontpageController extends Controller
 
     public function blog(){
         return view ('user.frontpage.blog', [
-            'active' => 'blog'
+            'active' => 'blog',
+            'blog' => Post::all()
         ]);
     }
 }
